@@ -1,0 +1,4 @@
+rootProject.name = 'javalab'
+include 'jdk17'
+include 'jdk11'
+include 'jdk8'
