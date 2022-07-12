@@ -3,4 +3,5 @@ include 'jdk17'
 include 'jdk11'
 include 'jdk8'
 include 'ratelimit'
+include 'curd'
 

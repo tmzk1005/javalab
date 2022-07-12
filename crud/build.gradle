@@ -1,0 +1,4 @@
+plugins {
+    id 'zk.javalab.java-base-conventions'
+}
+
