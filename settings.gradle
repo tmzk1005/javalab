@@ -4,4 +4,4 @@ include 'jdk11'
 include 'jdk8'
 include 'ratelimit'
 include 'curd'
-
+include 'resilience4j'

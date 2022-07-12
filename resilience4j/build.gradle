@@ -1,0 +1,9 @@
+plugins {
+    id 'zk.javalab.java-base-conventions'
+}
+
+dependencies {
+    implementation platform("io.github.resilience4j:resilience4j-bom:1.7.0")
+
+    implementation 'io.github.resilience4j:resilience4j-circuitbreaker'
+}
