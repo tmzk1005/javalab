@@ -1,3 +1,26 @@
 plugins {
     id 'zk.javalab.java-base-conventions'
 }
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+task runMain(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    var usage = "Usage: gradlew :jdk17:runMain -PmainClass=[mainclass] -Pargs=[args]"
+    doFirst {
+        if (!project.hasProperty("mainClass")) {
+            println(usage)
+            throw new StopExecutionException(usage)
+        }
+        mainClass = project.property("mainClass")
+        println("Run main class named: $mainClass")
+        if (project.hasProperty("args")) {
+            args = project.property("args")
+            println("args: $args")
+        }
+    }
+}
