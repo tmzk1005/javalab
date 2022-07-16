@@ -24,14 +24,14 @@ public class HmacSha256Sign {
         }
 
         public static char[] encode(byte[] bytes) {
-            final int nBytes = bytes.length;
-            char[] result = new char[2 * nBytes];
+            final int byteCount = bytes.length;
+            char[] result = new char[2 * byteCount];
             int j = 0;
-            for (byte aByte : bytes) {
+            for (byte oneByte : bytes) {
                 // Char for top 4 bits
-                result[j++] = HEX_CHARS[(0xF0 & aByte) >>> 4];
+                result[j++] = HEX_CHARS[(0xF0 & oneByte) >>> 4];
                 // Bottom 4
-                result[j++] = HEX_CHARS[(0x0F & aByte)];
+                result[j++] = HEX_CHARS[(0x0F & oneByte)];
             }
             return result;
         }
